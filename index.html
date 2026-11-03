@@ -408,6 +408,29 @@ a:hover .li-badge{transform:scale(1.14) rotate(-6deg)}
 .acad .role{text-transform:uppercase;font-weight:700}
 @media (max-width:640px){.acad{grid-template-columns:1fr;align-items:start}.acad-photo{width:150px}}
 
+/* ============ dónde · sede presencial (mismo diseño que El Líder Exponencial) ============ */
+.loc{display:grid;grid-template-columns:.9fr 1.1fr;gap:clamp(28px,4vw,60px);align-items:stretch}
+.loc-col{display:flex;flex-direction:column;justify-content:center}
+.loc-place{display:flex;align-items:flex-start;gap:15px;margin-top:clamp(22px,2.6vw,30px);
+  padding:20px 24px;border-radius:var(--r);border:1px solid var(--line-d);
+  background:linear-gradient(140deg,rgba(207,132,247,.13),rgba(45,90,214,.07))}
+.loc-place > svg{width:26px;height:26px;flex:none;margin-top:4px;color:var(--violet)}
+.loc-place .n{display:block;font-size:clamp(1.12rem,1.8vw,1.4rem);font-weight:700;letter-spacing:-.03em;line-height:1.22}
+.loc-place .b{display:block;margin-top:5px;font-size:.93rem;color:var(--txt-l-soft)}
+.loc-note{margin-top:20px;font-size:.96rem;line-height:1.6;color:var(--txt-l-soft);max-width:46ch}
+.loc-cta{margin-top:clamp(22px,2.6vw,30px);display:flex;flex-wrap:wrap;gap:12px}
+.loc-map{position:relative;display:flex;align-items:center;width:100%;max-width:680px;margin-left:auto;border-radius:var(--r-lg);overflow:hidden;border:1px solid var(--line-d);
+  background:radial-gradient(120% 105% at 24% 10%,#231a52 0%,#120E2C 58%,#08061A 100%);box-shadow:var(--shadow)}
+.loc-map svg{width:100%;height:auto;display:block}
+.loc-ring{transform-box:fill-box;transform-origin:center;animation:locPulse 3.6s var(--ease) infinite}
+.loc-ring.r2{animation-delay:1.2s}
+.loc-ring.r3{animation-delay:2.4s}
+.loc-pin{transform-box:fill-box;transform-origin:center bottom;animation:locDrop 3.6s var(--ease) infinite}
+@keyframes locPulse{0%{opacity:.6;transform:scale(.3)}70%{opacity:0;transform:scale(1)}100%{opacity:0;transform:scale(1)}}
+@keyframes locDrop{0%,74%,100%{transform:translateY(0)}82%{transform:translateY(-10px)}90%{transform:translateY(0)}}
+@media (prefers-reduced-motion:reduce){.loc-ring,.loc-pin{animation:none}}
+@media (max-width:1080px){.loc{grid-template-columns:1fr}.loc-map{margin-inline:auto}}
+
 /* ---------- incluye ---------- */
 .inc{display:grid;gap:0;margin-top:clamp(26px,3vw,40px);border-top:1px solid var(--line-d)}
 .inc-item{display:grid;grid-template-columns:56px 1fr;gap:14px;align-items:center;padding:20px 4px;
@@ -628,6 +651,7 @@ footer{background:var(--ink);border-top:1px solid var(--line-d);padding:clamp(44
     <a href="#recursos">Qué te llevás</a>
     <a href="#guia">Quién te guía</a>
     <a href="#agenda">Agenda</a>
+    <a href="#donde">Dónde</a>
   </div>
   <div style="display:flex;gap:10px;align-items:center">
     <a class="btn" href="#postulacion">Inscribite <span class="arw">→</span></a>
@@ -656,7 +680,7 @@ footer{background:var(--ink);border-top:1px solid var(--line-d);padding:clamp(44
     <dl class="hero-meta">
       <div><dt>Fechas</dt><dd>Viernes 20 o 27 de noviembre</dd></div>
       <div><dt>Horario</dt><dd>14:00 a 17:30</dd></div>
-      <div><dt>Formato</dt><dd>Presencial</dd></div>
+      <div><dt>Dónde</dt><dd>Parque de Innovación</dd></div>
     </dl>
   </div>
   <div class="scroll-cue">Scroll</div>
@@ -773,7 +797,7 @@ footer{background:var(--ink);border-top:1px solid var(--line-d);padding:clamp(44
     <div class="kicker rv">Agenda del taller</div>
     <h2 class="rv" data-d="1">Tres horas, de la teoría al cuerpo</h2>
     <div class="panel rv" data-d="2" style="margin-top:clamp(28px,4vw,44px)">
-      <div class="panel-head"><strong>Viernes 20 o 27 de noviembre</strong><span>Presencial · 14:00 a 17:30</span></div>
+      <div class="panel-head"><strong>Viernes 20 o 27 de noviembre</strong><span>Parque de Innovación · 14:00 a 17:30</span></div>
       <div class="row"><div class="t">Día previo</div><div class="s">Recibís por mail tu resumen ejecutivo: tipo, estrategia y autoridad.</div><div class="w">Antes del taller</div></div>
       <div class="row"><div class="t">0:00 – 0:30</div><div class="s">Apertura y qué es Diseño Humano: de la autoridad externa a la interna.</div><div class="w">Teoría</div></div>
       <div class="row"><div class="t">0:30 – 1:00</div><div class="s">Tu tipo y tu estrategia en profundidad, y el mapa energético de la sala.</div><div class="w">Teoría + experiencia</div></div>
@@ -789,6 +813,143 @@ footer{background:var(--ink);border-top:1px solid var(--line-d);padding:clamp(44
 
 
 <!-- ===================== FORMULARIO ===================== -->
+<!-- ===================== DÓNDE ===================== -->
+<section class="sec dark" id="donde">
+  <div class="wrap">
+    <div class="loc">
+      <div class="loc-col">
+        <div class="kicker rv">Dónde</div>
+        <h2 class="rv" data-d="1" style="max-width:26ch">El taller es en el <span class="vio">Parque de Innovación.</span></h2>
+        <div class="loc-place rv" data-d="2">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s7-6.14 7-11a7 7 0 1 0-14 0c0 4.86 7 11 7 11Z"/><circle cx="12" cy="10" r="2.6"/></svg>
+          <span><span class="n">Parque de Innovación</span><span class="b">Núñez · Ciudad de Buenos Aires</span></span>
+        </div>
+        <p class="loc-note rv" data-d="3">Viernes 20 o viernes 27 de noviembre, de 14:00 a 17:30. Elegís una de las dos fechas al inscribirte.</p>
+        <div class="loc-cta rv" data-d="4">
+          <a class="btn" href="https://maps.app.goo.gl/68jUyQ1gKTU1XB8s7" target="_blank" rel="noopener">Abrir en Google Maps <span class="arw">&rarr;</span></a>
+        </div>
+      </div>
+      <div class="loc-map rv" data-d="2">
+        <svg viewBox="0 0 700 640" role="img" aria-label="Mapa de ubicación: el Parque de Innovación está en Núñez, entre la Av. Campos Salles, Ernesto A. Bavio y la Av. Guillermo Udaondo, pegado al Estadio Monumental, con la Av. del Libertador y la estación Núñez del Mitre al suroeste, y las avenidas Cantilo y Lugones, Ciudad Universitaria y el Río de la Plata al noreste.">
+      <defs>
+        <linearGradient id="locAv" x1="0" y1="0" x2="1" y2="0">
+          <stop offset="0%" stop-color="#CF84F7"/><stop offset="55%" stop-color="#7B4FE0"/><stop offset="100%" stop-color="#2D5AD6"/>
+        </linearGradient>
+        <linearGradient id="locPark" x1="0" y1="0" x2="1" y2="1">
+          <stop offset="0%" stop-color="rgba(207,132,247,.36)"/><stop offset="100%" stop-color="rgba(45,90,214,.24)"/>
+        </linearGradient>
+        <linearGradient id="locWater" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0%" stop-color="rgba(45,90,214,.42)"/><stop offset="100%" stop-color="rgba(45,90,214,.10)"/>
+        </linearGradient>
+        <linearGradient id="locPinG" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0%" stop-color="#CF84F7"/><stop offset="100%" stop-color="#8B3FD4"/>
+        </linearGradient>
+        <filter id="locGlow" x="-60%" y="-60%" width="220%" height="220%">
+          <feGaussianBlur stdDeviation="11" result="b"/>
+          <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+        </filter>
+      </defs>
+
+      <!-- trama de calles -->
+      <g stroke="rgba(255,255,255,.075)" stroke-width="1">
+        <path d="M30 196V640M74 200V640M118 204V640M162 208V640M206 212V640"/>
+        <path d="M452 448V640M496 452V640M540 456V640M584 460V640M628 464V640M672 468V640"/>
+        <path d="M252 476V640M296 480V640M340 484V640M384 488V640"/>
+        <path d="M0 240H210M0 288H210M0 336H210M0 384H210M0 432H700M0 470H700M0 508H210M232 540H700M0 574H130M0 610H700"/>
+      </g>
+      <g fill="rgba(255,255,255,.035)">
+        <rect x="36" y="246" width="32" height="36" rx="4"/><rect x="80" y="252" width="32" height="30" rx="4"/>
+        <rect x="36" y="296" width="32" height="34" rx="4"/><rect x="124" y="296" width="32" height="34" rx="4"/>
+        <rect x="36" y="344" width="32" height="34" rx="4"/><rect x="168" y="344" width="32" height="34" rx="4"/>
+        <rect x="458" y="478" width="32" height="40" rx="4"/><rect x="546" y="482" width="32" height="36" rx="4"/>
+        <rect x="590" y="548" width="32" height="34" rx="4"/><rect x="502" y="548" width="32" height="34" rx="4"/>
+        <rect x="36" y="480" width="32" height="34" rx="4"/><rect x="124" y="480" width="32" height="34" rx="4"/>
+        <rect x="80" y="618" width="32" height="22" rx="4"/><rect x="256" y="618" width="32" height="22" rx="4"/>
+        <rect x="36" y="516" width="32" height="30" rx="4"/><rect x="168" y="516" width="32" height="30" rx="4"/>
+        <rect x="256" y="548" width="32" height="34" rx="4"/><rect x="344" y="548" width="32" height="34" rx="4"/>
+        <rect x="458" y="618" width="32" height="22" rx="4"/><rect x="546" y="618" width="32" height="22" rx="4"/>
+        <rect x="634" y="548" width="32" height="34" rx="4"/><rect x="256" y="478" width="32" height="30" rx="4"/>
+      </g>
+
+      <!-- río de la plata -->
+      <path d="M0 0H700V66C580 84 470 52 350 58 230 64 130 88 0 78Z" fill="url(#locWater)"/>
+      <path d="M0 78C130 88 230 64 350 58 470 52 580 84 700 66" fill="none" stroke="rgba(130,178,244,.6)" stroke-width="2"/>
+
+      <!-- franja costanera -->
+      <path d="M0 84C130 94 230 70 350 64 470 58 580 90 700 72V132C580 148 470 118 350 124 230 130 130 152 0 142Z" fill="rgba(207,132,247,.05)"/>
+      <path d="M0 142C130 152 230 130 350 124 470 118 580 148 700 132" fill="none" stroke="rgba(255,255,255,.09)" stroke-width="1"/>
+      <g fill="none" stroke="rgba(255,255,255,.07)" stroke-width="1">
+        <path d="M60 88V146M140 84V150M240 70V128M330 64V124"/>
+      </g>
+
+      <!-- ciudad universitaria + clubes -->
+      <g fill="rgba(207,132,247,.075)" stroke="rgba(207,132,247,.18)" stroke-width="1">
+        <rect x="436" y="96" width="86" height="40" rx="8"/>
+        <rect x="532" y="100" width="72" height="36" rx="8"/>
+        <rect x="614" y="94" width="86" height="42" rx="8"/>
+        <rect x="72" y="198" width="130" height="40" rx="9"/>
+        <rect x="72" y="248" width="130" height="80" rx="11"/>
+      </g>
+
+      <!-- avenidas principales -->
+      <path d="M-10 176C160 164 340 158 520 164 610 167 660 172 710 178" fill="none" stroke="url(#locAv)" stroke-width="9" stroke-linecap="round" opacity=".85"/>
+      <path d="M-10 192C160 180 340 174 520 180 610 183 660 188 710 194" fill="none" stroke="url(#locAv)" stroke-width="5" stroke-linecap="round" opacity=".5"/>
+      <path d="M-10 494C200 500 420 514 710 534" fill="none" stroke="url(#locAv)" stroke-width="9" stroke-linecap="round" opacity=".85"/>
+
+      <!-- calles del entorno del parque -->
+      <g fill="none" stroke="rgba(207,132,247,.45)" stroke-width="4.5" stroke-linecap="round">
+        <path d="M208 200V572"/><path d="M436 214V572"/><path d="M150 430H548"/>
+      </g>
+
+      <!-- ferrocarril mitre -->
+      <path d="M-10 566C170 574 340 584 560 594" fill="none" stroke="rgba(255,255,255,.32)" stroke-width="2" stroke-dasharray="10 7"/>
+      <circle cx="146" cy="570" r="5" fill="#0D0A20" stroke="rgba(255,255,255,.6)" stroke-width="2"/>
+
+      <!-- estadio monumental -->
+      <ellipse cx="524" cy="330" rx="66" ry="54" fill="rgba(255,255,255,.06)" stroke="rgba(255,255,255,.2)" stroke-width="1.5"/>
+      <ellipse cx="524" cy="330" rx="35" ry="25" fill="rgba(207,132,247,.18)"/>
+
+      <!-- parque de innovación -->
+      <path d="M218 252L428 240L434 404L224 414Z" fill="url(#locPark)" stroke="rgba(207,132,247,.66)" stroke-width="2"/>
+      <g stroke="rgba(255,255,255,.14)" stroke-width="1"><path d="M292 248V410M362 244V407M220 330H432"/></g>
+
+      <!-- pin -->
+      <g filter="url(#locGlow)">
+        <circle class="loc-ring r1" cx="320" cy="330" r="60" fill="none" stroke="rgba(207,132,247,.55)" stroke-width="2"/>
+        <circle class="loc-ring r2" cx="320" cy="330" r="60" fill="none" stroke="rgba(207,132,247,.4)" stroke-width="2"/>
+        <circle class="loc-ring r3" cx="320" cy="330" r="60" fill="none" stroke="rgba(207,132,247,.28)" stroke-width="2"/>
+        <g class="loc-pin">
+          <path d="M320 244c-19 0-35 16-35 35 0 26 35 51 35 51s35-25 35-51c0-19-16-35-35-35Z" fill="url(#locPinG)"/>
+          <circle cx="320" cy="279" r="11" fill="#0D0A20"/>
+        </g>
+      </g>
+
+      <!-- etiquetas -->
+      <g font-family="'Plus Jakarta Sans',system-ui,sans-serif">
+        <text x="232" y="400" font-size="15" font-weight="700" fill="#fff">Parque de Innovación</text>
+        <text x="536" y="36" font-size="13" font-weight="600" fill="rgba(150,192,245,.85)">Río de la Plata</text>
+        <text x="446" y="156" font-size="12" font-weight="600" fill="rgba(255,255,255,.5)">Ciudad Universitaria</text>
+        <text x="22" y="152" font-size="12" font-weight="600" fill="rgba(255,255,255,.58)">Av. Cantilo · Av. Lugones</text>
+        <text x="462" y="404" font-size="12" font-weight="600" fill="rgba(255,255,255,.56)">Estadio Monumental</text>
+        <text x="22" y="486" font-size="12" font-weight="600" fill="rgba(255,255,255,.58)">Av. del Libertador</text>
+        <text x="240" y="452" font-size="11" font-weight="600" fill="rgba(255,255,255,.44)">Ernesto A. Bavio</text>
+        <text x="166" y="556" font-size="11" font-weight="600" fill="rgba(255,255,255,.5)">Estación Núñez · Mitre</text>
+        <text x="198" y="372" font-size="11" font-weight="600" fill="rgba(255,255,255,.46)" transform="rotate(-90 198 372)">Av. Campos Salles</text>
+        <text x="452" y="556" font-size="11" font-weight="600" fill="rgba(255,255,255,.46)" transform="rotate(-90 452 556)">Av. G. Udaondo</text>
+        <text x="26" y="604" font-size="16" font-weight="700" fill="rgba(255,255,255,.22)" letter-spacing="4">NÚÑEZ</text>
+      </g>
+
+      <!-- norte -->
+      <g opacity=".5" fill="none" stroke="rgba(255,255,255,.7)" stroke-width="1.6" stroke-linecap="round">
+        <path d="M44 52V28"/><path d="M38 34l6-6 6 6"/>
+        <text x="39" y="74" font-size="12" font-weight="600" fill="rgba(255,255,255,.7)" stroke="none" font-family="'Plus Jakarta Sans',system-ui,sans-serif">N</text>
+      </g>
+    </svg>
+      </div>
+    </div>
+  </div>
+</section>
+
 <section class="sec form-sec" id="postulacion">
   <div class="wrap">
     <div class="form-grid">
@@ -797,7 +958,7 @@ footer{background:var(--ink);border-top:1px solid var(--line-d);padding:clamp(44
         <h2 class="rv" data-d="1" style="max-width:18ch">Reservá tu lugar</h2>
         <p class="lead muted rv" data-d="2" style="margin-top:20px;max-width:40ch">Dejanos tus datos y te confirmamos el lugar. Para preparar tu resumen ejecutivo te vamos a pedir tu fecha de nacimiento.</p>
         <ul class="perks rv" data-d="3">
-          <li><svg class="ico-s" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7.2V12l3.2 2"/></svg>Viernes 20 o 27 de noviembre · 14:00 a 17:30 · Presencial</li>
+          <li><svg class="ico-s" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7.2V12l3.2 2"/></svg>Viernes 20 o 27 de noviembre · 14:00 a 17:30 · Parque de Innovación</li>
           <li><svg class="ico-s" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="9" cy="8.5" r="3.2"/><path d="M3.2 19.5c.6-3.2 3-5 5.8-5s5.2 1.8 5.8 5"/><path d="M15.6 5.6a3 3 0 0 1 0 5.8M17.6 14.8c1.7.6 2.8 2.2 3.2 4.7"/></svg>Cupo limitado a 20 participantes</li>
           <li><svg class="ico-s" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 4.5L3.5 6.6v13l5.5-2.1l6 2.1l5.5-2.1v-13L15 6.6Z"/><path d="M9 4.5v13M15 6.6v13"/></svg>Resumen ejecutivo con tu tipo, estrategia y autoridad</li>
           <li><svg class="ico-s" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2.8" y="4.5" width="18.4" height="15" rx="2.6"/><path d="M7 10l2.8 2L7 14"/><path d="M12.4 14.6h4.6"/></svg>Tu system prompt personal para llevarte</li>
@@ -875,6 +1036,7 @@ footer{background:var(--ink);border-top:1px solid var(--line-d);padding:clamp(44
         <a href="#guia">Quién te guía</a>
         <a href="#recursos">Qué te llevás</a>
         <a href="#agenda">Agenda</a>
+        <a href="#donde">Dónde</a>
       </div>
       <div>
         <div class="foot-h">Inscripción</div>
